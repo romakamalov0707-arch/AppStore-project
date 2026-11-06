@@ -1,6 +1,6 @@
 # AppStor
 
-Мобильное приложение на **React Native (Expo)**: вход, регистрация, восстановление пароля, выбор города и список заведений.
+Мобильное приложение на **React Native (Expo) + TypeScript**: вход, регистрация, восстановление пароля, выбор города и список заведений.
 
 Работает на Android, iOS и в браузере.
 
@@ -17,6 +17,7 @@
 
 - [Expo](https://expo.dev) SDK 57
 - React Native 0.86
+- TypeScript
 - [Expo Router](https://docs.expo.dev/router/introduction/) — навигация между страницами
 - `@expo/vector-icons` — иконки
 
@@ -53,15 +54,15 @@ assets/         иконки приложения
 
 | Файл | Страница |
 |---|---|
-| `Login.jsx` | Вход |
-| `Register.jsx` | Регистрация |
-| `SelectCity.jsx` | Выбор города |
-| `ForgotPassword.jsx` | Восстановление пароля |
-| `VerifyCode.jsx` | Подтверждение номера (код из СМС) |
-| `ResetPassword.jsx` | Новый пароль |
-| `Home.jsx` | Список заведений |
-| `Venue.jsx` | Страница заведения |
-| `Profile.jsx` | Профиль |
+| `Login.tsx` | Вход |
+| `Register.tsx` | Регистрация |
+| `SelectCity.tsx` | Выбор города |
+| `ForgotPassword.tsx` | Восстановление пароля |
+| `VerifyCode.tsx` | Подтверждение номера (код из СМС) |
+| `ResetPassword.tsx` | Новый пароль |
+| `Home.tsx` | Список заведений |
+| `Venue.tsx` | Страница заведения |
+| `Profile.tsx` | Профиль |
 
 ### Элементы (`components/`)
 
@@ -70,17 +71,17 @@ assets/         иконки приложения
 | Поля ввода | `Input`, `PhoneInput`, `PasswordInput`, `NameInput`, `CodeInput`, `CitySelect` |
 | Кнопки | `PrimaryButton`, `ContinueButton`, `LoginButton`, `RegisterButton`, `BookButton`, `LogoutButton`, `BackButton`, `ProfileButton` |
 | Текст | `ScreenTitle`, `ErrorText`, `TextLink`, `ResendCodeLink` |
-| Другое | `Screen`, `TermsCheckbox`, `VenueCard`, `InfoRow`, `theme.js` |
+| Другое | `Screen`, `TermsCheckbox`, `VenueCard`, `InfoRow`, `theme.ts` |
 
 ### Вспомогательные файлы (`utils/`)
 
 | Файл | Что делает |
 |---|---|
-| `phone.js` | Формат номера `+7 (700) 555 77 55` и проверка, что номер введён полностью |
-| `password.js` | Проверка пароля: не менее 8 символов, прописные и строчные буквы |
-| `user.js` | Данные текущего пользователя (имя, телефон, город) |
-| `venues.js` | Список заведений |
-| `notify.js` | Всплывающее сообщение |
+| `phone.ts` | Формат номера `+7 (700) 555 77 55` и проверка, что номер введён полностью |
+| `password.ts` | Проверка пароля: не менее 8 символов, прописные и строчные буквы |
+| `user.ts` | Данные текущего пользователя (имя, телефон, город) |
+| `venues.ts` | Список заведений |
+| `notify.ts` | Всплывающее сообщение |
 
 ## Навигация
 
