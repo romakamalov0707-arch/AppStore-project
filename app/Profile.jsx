@@ -5,6 +5,7 @@ import InfoRow from '../components/InfoRow';
 import LogoutButton from '../components/LogoutButton';
 import { user, clearUser } from '../utils/user';
 import { clearCart } from '../utils/cart';
+import { clearOrders } from '../utils/orders';
 
 export default function Profile() {
   const [data, setData] = useState({ ...user });
@@ -18,6 +19,7 @@ export default function Profile() {
   const onLogout = () => {
     clearUser();
     clearCart();
+    clearOrders();
     if (router.canDismiss()) router.dismissAll();
     router.replace('/Login');
   };
@@ -35,6 +37,7 @@ export default function Profile() {
       />
       <InfoRow icon="create" label="Данные" value="Редактировать профиль" onPress={() => router.push('/EditProfile')} />
       <InfoRow icon="cart" label="Заказ" value="Корзина" onPress={() => router.push('/Cart')} />
+      <InfoRow icon="receipt" label="История" value="Мои заказы" onPress={() => router.push('/Orders')} />
     </Screen>
   );
 }

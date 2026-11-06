@@ -9,7 +9,8 @@ import TotalRow from '../components/TotalRow';
 import ErrorText from '../components/ErrorText';
 import ConfirmOrderButton from '../components/ConfirmOrderButton';
 import { user } from '../utils/user';
-import { clearCart, getTotal } from '../utils/cart';
+import { cart, clearCart, getTotal } from '../utils/cart';
+import { addOrder } from '../utils/orders';
 
 export default function Checkout() {
   const [address, setAddress] = useState(user.address);
@@ -22,6 +23,13 @@ export default function Checkout() {
 
     user.address = address.trim();
     const number = Math.floor(1000 + Math.random() * 9000);
+    addOrder({
+      number,
+      date: new Date().toLocaleString('ru-RU'),
+      items: cart.map((item) => ({ ...item })),
+      total: getTotal(),
+      address: user.address,
+    });
     clearCart();
 
     if (router.canDismiss()) router.dismissAll();
